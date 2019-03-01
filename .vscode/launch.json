@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Simple node.js app",
-      "program": "${workspaceFolder}/simple-node-js/index.js"
+      "program": "${workspaceFolder}/debugging/simple-node-js/index.js"
     }
   ]
 }

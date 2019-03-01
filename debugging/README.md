@@ -10,7 +10,7 @@ Visual Studio Code 的一个主要特点就是它对调试的支持。VS Code �
 
 VS Code 已经内置了对 [Node.js](https://nodejs.org/) 运行时调试的支持，并且可以调试 JavaScript，TypeScript 和其他任何能转换为 JavaScript 的语言。
 
-如果要调试其他的语言和运行时（包括 [PHP](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug), [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby), [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go), [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Powershell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell) 和 [其他](https://marketplace.visualstudio.com/search?term=debug&target=VSCode&category=Debuggers&sortBy=Relevance)），可以在我们的 VS Code [商店]() 搜索 `Debuggers` [扩展](https://code.visualstudio.com/docs/editor/extension-gallery)，或点击顶层菜单 Debug 中的 **Install Additional Debuggers**。
+如果要调试其他的语言和运行时（包括 [PHP](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug), [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby), [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go), [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Powershell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell) 和 [其他](https://marketplace.visualstudio.com/search?term=debug&target=VSCode&category=Debuggers&sortBy=Relevance)），可以在我们的 VS Code [商店]() 搜索 `Debuggers` [扩展](https://code.visualstudio.com/docs/editor/extension-gallery)，或点击顶级菜单 Debug 中的 **Install Additional Debuggers**。
 
 下面是几个包含对调试支持的流行扩展：
 
@@ -19,7 +19,7 @@ VS Code 已经内置了对 [Node.js](https://nodejs.org/) 运行时调试的支�
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 
-> 提示：上面列出的扩展是动态查询的。点击上面的扩展地址查看描述信息，重新检查并决定那个扩展是你最需要的。
+> **提示**：上面列出的扩展是动态查询的。点击上面的扩展地址查看描述信息，重新检查并决定那个扩展是你最需要的。
 
 ## 开始调试 / Start debugging
 
@@ -27,13 +27,42 @@ VS Code 已经内置了对 [Node.js](https://nodejs.org/) 运行时调试的支�
 
 阅读关于调试的内容之前，先创建一个 Node.js 的例子是有帮助的。你可以跟随 [Node.js 攻略](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) 去安装 Node.js 并创建一个 "Hello World" 的 JavaScript 应用（`app.js`）。当你有了一个全部建立好的简单应用后，这个页面会带你了解 VS Code 的调试特性。
 
-## Debug view
+## 调试视图 / Debug view
 
-## Debug menu
+要打开调试视图，我们需要点击 VS Code 侧边 **活动栏** 中的 Debug 图标。你也可以使用键盘快捷键 `⇧⌘D`。
+
+![Debug icon](https://code.visualstudio.com/assets/docs/editor/debugging/debugicon.png)
+
+调试视图展示了所有与调试有关的信息，并且有一个包含调试命令和配置设置的顶部栏。
+
+## 调试菜单 / Debug menu
+
+Debug 顶级菜单里包含最常见的调试命令：
+
+![Debug menu](https://code.visualstudio.com/assets/docs/editor/debugging/debug-menu.png)
 
 ## Launch configurations
 
-## Debug actions
+## 调试动作 / Debug actions
+
+当一个调试会话启动后，**调试工具栏** 会出现在编辑器的顶部。
+
+![Debug Actions](https://code.visualstudio.com/assets/docs/editor/debugging/toolbar.png)
+
+- 继续 / 暂停 `F5`
+- 单步执行 Step Over `F10`
+- 单步进入 Step Into `F11`
+- 跳出 Step Out `⇧F11`
+- 重新开始 Restart `⇧⌘F5`
+- 停止 Stop `⇧F5`
+
+> **提示**：使用 `debug.toolBarLocation` 设置可以控制调试工具栏的位置。它可以被设置为默认的 `floating`，固定在调试视图中（`docked`）或隐藏（`hidden`）。一个设置为 `floating` 的调试工具栏可以被水平拖拽或向下移到编辑区域。
+
+### 运行模式 / Run mode
+
+除了调试程序，VS Code 还支持 **运行** 程序。使用 `⌃F5` 触发 `Debug: Start Without Debugging` 动作，并使用当前选择的启动配置。`运行` 模式支持许多启动配置的属性。程序运行时，VS Code 会维护一个调试会话，点击 `停止` 按钮将终止程序。
+
+> **提示**：**运行** 动作是始终可用的，但并非所有调试器扩展支持 '运行'。在本例子中，'运行' 和 '调试' 是等价的。
 
 ## Breakpoints
 

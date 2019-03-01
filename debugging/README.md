@@ -42,7 +42,7 @@ vscode 的一个主要特点就是它对调试的支持。vscode 的内置调试
 
 - `preLaunchTask` - 如果要在调试会话开始前启动一个任务，将该属性设置为在 [tasks.json](https://code.visualstudio.com/docs/editor/tasks)(位于工作区的 `.vscode` 文件夹中) 中指明过的任务的 name。
 
-- `postDebugTask` - 如果要在每次调试会话结束后启动一个任务，将该属性设置为在 [tasks.json](https://code.visualstudio.com/docs/editor/tasks)(位于工作区的 `.vscode` 文件夹中) 中指明过的任务的 name。
+- `postDebugTask` - 如果要在调试会话的最后启动一个任务，将该属性设置为在 [tasks.json](https://code.visualstudio.com/docs/editor/tasks)(位于工作区的 `.vscode` 文件夹中) 中指明过的任务的 name。
 
 - `internalConsoleOptions` - 这个属性控制 Debug Console 面板在调试会话中是否可见。
 

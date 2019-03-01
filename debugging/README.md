@@ -2,11 +2,24 @@
 
 > 翻译自 [官方文档](https://code.visualstudio.com/docs/editor/debugging)
 
-vscode 的一个主要特点就是它对调试的支持。vscode 的内置调试器有助于加速你的编辑-编译-调试的循环。
+Visual Studio Code 的一个主要特点就是它对调试的支持。VS Code 的内置调试器有助于加速你的编辑-编译-调试的循环。
 
 ![Debugging diagram](https://code.visualstudio.com/assets/docs/editor/debugging/debugging_hero.png)
 
 ## Debugger extensions
+
+VS Code 已经内置了对 [Node.js](https://nodejs.org/) 运行时调试的支持，并且可以调试 JavaScript，TypeScript 和其他任何能转换为 JavaScript 的语言。
+
+如果要调试其他的语言和运行时（包括 [PHP](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug), [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby), [Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go), [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Powershell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell) 和 [其他](https://marketplace.visualstudio.com/search?term=debug&target=VSCode&category=Debuggers&sortBy=Relevance)），可以在我们的 VS Code [商店]() 搜索 `Debuggers` [扩展](https://code.visualstudio.com/docs/editor/extension-gallery)，或点击顶层菜单 Debug 中的 **Install Additional Debuggers**。
+
+下面是几个包含对调试支持的流行扩展：
+
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+- [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+- [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+
+> 提示：上面列出的扩展是动态查询的。点击上面的扩展地址查看描述信息，重新检查并决定那个扩展是你最需要的。
 
 ## Start debugging
 

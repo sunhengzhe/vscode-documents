@@ -64,9 +64,29 @@ Debug 顶级菜单里包含最常见的调试命令：
 
 > **提示**：**运行** 动作是始终可用的，但并非所有调试器扩展支持 '运行'。在本例子中，'运行' 和 '调试' 是等价的。
 
-## Breakpoints
+## 断点 / Breakpoints
 
-## Logpoints
+点击 **编辑器的边缘** 可以打开或关闭断点。在调试视图的 **BREAKPOINTS** 区域中可以完成较小粒度的断点控制（启动/禁用/再次应用）。
+
+- 在编辑器的边缘，断点正常情况下显示为红色实心的圆。
+- 禁用的断点为灰色实心的圆。
+- 当调试会话启动时，不能被注册的断点会改变为灰色空心的圆。当调试会话运行时源代码被修改，但实时编辑（live-edit）功能没有开启时也会可能会出现同样的状况。
+
+**再次应用所有断点** 命令（The Reapply All）将所有断点设置为它们的初始位置。如果你的调试环境为 "lazy" 并且 "误置" 断点在还没有被执行的源代码上时将会很有帮助。
+
+![Breakpoints](https://code.visualstudio.com/assets/docs/editor/debugging/breakpoints.png)
+
+## 日志断点 / Logpoints
+
+日志断点是断点的一个变种，但日志断点不会 “中断” 调试器，而是在控制台中打出一条信息。在不能暂停或停止的生产环境中调试时，可以注入日志的日志断点非常有用。
+
+日志断点使用一个“菱形”图标表示。日志信息纯文本，但可以包含被花括号包裹的求值表达式（'{}'）。
+
+![Logpoints](https://code.visualstudio.com/assets/docs/editor/debugging/log-points.gif)
+
+和普通的断点一样，日志断点可以被启用或禁用，也能使用条件语句或执行次数控制。
+
+> **注**：日志断点目前只被 VS Code 的内置 Node.js 调试器支持，但也能其他调试扩展支持。比如 [Python 的扩展](https://code.visualstudio.com/docs/python/python-tutorial) 已经支持日志断点。
 
 ## Data inspection
 

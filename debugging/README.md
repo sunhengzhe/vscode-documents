@@ -19,7 +19,7 @@ VS Code 已经内置了对 [Node.js](https://nodejs.org/) 运行时调试的支�
 - [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 - [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 
-> **提示**：上面列出的扩展是动态查询的。点击上面的扩展地址查看描述信息，重新检查并决定那个扩展是你最需要的。
+> **提示**：上面列出的扩展是动态查询的。点击上面的扩展地址查看描述信息，重新审视并决定那个扩展是你最需要的。
 
 ## 开始调试 / Start debugging
 
@@ -80,7 +80,7 @@ Debug 顶级菜单里包含最常见的调试命令：
 
 日志断点是断点的一个变种，但日志断点不会 “中断” 调试器，而是在控制台中打出一条信息。在不能暂停或停止的生产环境中调试时，可以注入日志的日志断点非常有用。
 
-日志断点使用一个“菱形”图标表示。日志信息纯文本，但可以包含被花括号包裹的求值表达式（'{}'）。
+日志断点使用一个“菱形”图标表示。日志信息纯文本，但可以包含被花括号包裹的求值表达式（`{}`）。
 
 ![Logpoints](https://code.visualstudio.com/assets/docs/editor/debugging/log-points.gif)
 
@@ -114,7 +114,7 @@ Debug 顶级菜单里包含最常见的调试命令：
 
 - `debugServer` - **仅供 debug 扩展的作者使用**：这个属性允许你连接一个指定端口而不是启动调试适配器。
 
-- 许多调试器还支持一些以下属性：
+许多调试器还支持以下属性：
 
 - `program` - 启动调试器时执行的可执行文件或文件。
 

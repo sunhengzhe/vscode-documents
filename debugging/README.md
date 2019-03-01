@@ -88,7 +88,19 @@ Debug 顶级菜单里包含最常见的调试命令：
 
 > **注**：日志断点目前只被 VS Code 的内置 Node.js 调试器支持，但也能其他调试扩展支持。比如 [Python 的扩展](https://code.visualstudio.com/docs/python/python-tutorial) 已经支持日志断点。
 
-## Data inspection
+## 检查数据 / Data inspection
+
+Variables can be inspected in the VARIABLES section of the Debug view or by hovering over their source in the editor. Variable values and expression evaluation are relative to the selected stack frame in the CALL STACK section.
+
+在调试视图的 **VARIABLES** 区域中或鼠标移动到编辑器内变量的位置可以查看变量的值。变量的值和表达式的求值是相对于 **CALL STACK** 区域内选择的堆栈的。
+
+![Debug Variables](https://code.visualstudio.com/assets/docs/editor/debugging/variables.png)
+
+在变量上点击右键，可以通过 **Set Value** 动作修改变量的值。
+
+在调试视图中的 **WATCH** 区域中，也能对变量和表达式进行求值和监听。
+
+![Debug Watch](https://code.visualstudio.com/assets/docs/editor/debugging/watch.png)
 
 ## Launch.json 属性
 

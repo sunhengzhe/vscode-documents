@@ -1,4 +1,4 @@
-# Debugging
+# 调试 / Debugging
 
 > 翻译自 [官方文档](https://code.visualstudio.com/docs/editor/debugging)
 
@@ -6,7 +6,7 @@ Visual Studio Code 的一个主要特点就是它对调试的支持。VS Code �
 
 ![Debugging diagram](https://code.visualstudio.com/assets/docs/editor/debugging/debugging_hero.png)
 
-## Debugger extensions
+## 调试器扩展 / Debugger extensions
 
 VS Code 已经内置了对 [Node.js](https://nodejs.org/) 运行时调试的支持，并且可以调试 JavaScript，TypeScript 和其他任何能转换为 JavaScript 的语言。
 
@@ -21,7 +21,11 @@ VS Code 已经内置了对 [Node.js](https://nodejs.org/) 运行时调试的支�
 
 > 提示：上面列出的扩展是动态查询的。点击上面的扩展地址查看描述信息，重新检查并决定那个扩展是你最需要的。
 
-## Start debugging
+## 开始调试 / Start debugging
+
+接下来的文档基于内置的 [Node.js](https://nodejs.org/) 调试器，但大部分概念和特性也同样适用于其他调试器。
+
+阅读关于调试的内容之前，先创建一个 Node.js 的例子是有帮助的。你可以跟随 [Node.js 攻略](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) 去安装 Node.js 并创建一个 "Hello World" 的 JavaScript 应用（`app.js`）。当你有了一个全部建立好的简单应用后，这个页面会带你了解 VS Code 的调试特性。
 
 ## Debug view
 

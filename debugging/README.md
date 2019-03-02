@@ -105,7 +105,7 @@ VS Code 的调试器一般支持在调试模式下启动一个程序，或在调
 
 ![launch json suggestions](https://code.visualstudio.com/assets/docs/editor/debugging/add-config.gif)
 
-VS Code 还支持混合的启动配置项以在同一时间启动多个配置项；详情请阅读 [这一节](#混合启动配置项-/-compound-launch-configurations)。
+VS Code 还支持混合的启动配置项以在同一时间启动多个配置项；详情请阅读 [这一节](#混合启动配置项--compound-launch-configurations)。
 
 为了启动一个调试会话，首先在调试视图中使用 **配置项下拉框** 选择名为 **Launch Program** 的配置。当你设置好你的启动配置项后，使用 `F5` 启动你的调试会话。
 

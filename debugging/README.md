@@ -214,15 +214,94 @@ As soon as a debugging session starts, the DEBUG CONSOLE panel is displayed and 
 
 - `port` - 需要连接到的运行进程的端口。
 
-- `stopOnEntry` - 当程序启动后立即中断。
+- `stopOnEntry` - 当程序启动后立即中止。（译者注：即如同在文件的第一行打断点）
 
 - `console` - 使用哪一种控制台，例如 `internalConsole`, `integratedTerminal`, 或 `externalTerminal`。
 
-## Variable substitution
+## 变量替换 / Variable substitution
 
-## Platform-specific properties
+VS Code makes commonly used paths and other values available as variables and supports variable substitution inside strings in launch.json. This means that you do not have to use absolute paths in debug configurations. For example, ${workspaceFolder} gives the root path of a workspace folder, ${file} the file open in the active editor, and ${env:Name} the environment variable 'Name'. You can see a full list of predefined variables in the Variables Reference or by invoking IntelliSense inside the launch.json string attributes.
 
-## Global launch configuration
+VS Code 提供一些常用路径和其他值可以作为变量使用，并支持在 `launch.json` 文件中的字符串中使用变量替换。这意味着在调试配置中你不需要使用绝对路径。例如，`${workspaceFolder}` 返回工作区目录的根路径，`${file}` 返回当前编辑器打开的文件， `${env:Name}` 代表环境变量中的 `Name` 值。通过在 `launch.json` 中的字符串属性上使用智能提示，你可以查看 [变量参考](https://code.visualstudio.com/docs/editor/variables-reference) 中列出的所有预定义的变量。
+
+```json
+{
+    "type": "node",
+    "request": "launch",
+    "name": "Launch Program",
+    "program": "${workspaceFolder}/app.js",
+    "cwd": "${workspaceFolder}",
+    "args": [ "${env:USERNAME}" ]
+}
+```
+
+（译者注：以上会将环境变量中的 USERNAME 值作为命令的第一个参数传递。）
+
+## 平台特定属性 / Platform-specific properties
+
+`Launch.json` 支持根据调试的操作系统不同定义不同的值（比如给程序传递的参数）。要完成这个，在 `launch.json` 文件中放入一个平台特定字面量并在字面量内指定相应的属性。
+
+下面是针对 Windows 传递不同的 `"args"` 到程序中的例子：
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/node_modules/gulp/bin/gulpfile.js",
+            "args": ["myFolder/path/app.js"],
+            "windows": {
+                "args": ["myFolder\\path\\app.js"]
+            }
+        }
+    ]
+}
+```
+
+Windows 系统的合法属性为 `"windows"`，Linux 系统为 `"linux"`，macOS 系统为 `"osx"`。在操作系统特定作用域内声明的属性将覆盖全局作用域定义的属性。
+
+下面的例子在除了 macOS 系统上调试时 *在入口处中止*。
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/node_modules/gulp/bin/gulpfile.js",
+            "stopOnEntry": true,
+            "osx": {
+                "stopOnEntry": false
+            }
+        }
+    ]
+}
+```
+
+## 全局启动配置项 / Global launch configuration
+
+VS Code supports adding a "launch" object inside your User settings. This "launch" configuration will then be shared across your workspaces. For example:
+
+VS Code 支持在你的 [用户设置](https://code.visualstudio.com/docs/getstarted/settings) 中加入一个 `"launch"` 对象。这个 `"launch"` 配置将在你的所有工作区中共享。如：
+
+```json
+"launch": {
+    "version": "0.2.0",
+    "configurations": [{
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${file}"
+    }]
+}
+```
+
+> **提示**: 如果某一个工作区包含 `"launch.json"` 文件，全局启动配置项会被忽略。
 
 ## Advanced breakpoint topics
 

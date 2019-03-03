@@ -8,7 +8,13 @@
       "type": "node",
       "request": "launch",
       "name": "Simple node.js app",
-      "program": "${workspaceFolder}/debugging/simple-node-js/index.js"
+      "program": "${workspaceFolder}/debugging/simple-node-js/index.js",
+      "args": [ "${env:PATH}" ],
+      "env": {
+        "USERNAME": "123",
+        "PATH": null
+      },
+      "stopOnEntry": true
     }
   ]
 }

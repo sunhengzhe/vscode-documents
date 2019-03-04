@@ -111,8 +111,6 @@ VS Code 还支持混合的启动配置项以在同一时间启动多个配置项
 
 另外一种方法是你可以通过 **命令面板**（`⇧⌘P`）来启动你的配置项，通过筛选 **Debug: Select and Start Debugging** 或输入 `'debug '`，然后选择你想要调试的配置项。
 
-As soon as a debugging session starts, the DEBUG CONSOLE panel is displayed and shows debugging output, and the Status Bar changes color (orange for default color themes):
-
 调试会话启动的同时，**DEBUG CONSOLE** 就会出现并显示调试输出，而且状态栏会改变颜色（默认颜色主题中为橘色）：
 
 ![debug session](https://code.visualstudio.com/assets/docs/editor/debugging/debug-session.png)
@@ -220,8 +218,6 @@ As soon as a debugging session starts, the DEBUG CONSOLE panel is displayed and 
 
 ## 变量替换 / Variable substitution
 
-VS Code makes commonly used paths and other values available as variables and supports variable substitution inside strings in launch.json. This means that you do not have to use absolute paths in debug configurations. For example, ${workspaceFolder} gives the root path of a workspace folder, ${file} the file open in the active editor, and ${env:Name} the environment variable 'Name'. You can see a full list of predefined variables in the Variables Reference or by invoking IntelliSense inside the launch.json string attributes.
-
 VS Code 提供一些常用路径和其他值可以作为变量使用，并支持在 `launch.json` 文件中的字符串中使用变量替换。这意味着在调试配置中你不需要使用绝对路径。例如，`${workspaceFolder}` 返回工作区目录的根路径，`${file}` 返回当前编辑器打开的文件， `${env:Name}` 代表环境变量中的 `Name` 值。通过在 `launch.json` 中的字符串属性上使用智能提示，你可以查看 [变量参考](https://code.visualstudio.com/docs/editor/variables-reference) 中列出的所有预定义的变量。
 
 ```json
@@ -285,8 +281,6 @@ Windows 系统的合法属性为 `"windows"`，Linux 系统为 `"linux"`，macOS
 
 ## 全局启动配置项 / Global launch configuration
 
-VS Code supports adding a "launch" object inside your User settings. This "launch" configuration will then be shared across your workspaces. For example:
-
 VS Code 支持在你的 [用户设置](https://code.visualstudio.com/docs/getstarted/settings) 中加入一个 `"launch"` 对象。这个 `"launch"` 配置将在你的所有工作区中共享。如：
 
 ```json
@@ -303,7 +297,36 @@ VS Code 支持在你的 [用户设置](https://code.visualstudio.com/docs/getsta
 
 > **提示**: 如果某一个工作区包含 `"launch.json"` 文件，全局启动配置项会被忽略。
 
-## Advanced breakpoint topics
+## 高级断点话题 / Advanced breakpoint topics
+
+### 条件断点
+
+VS Code 的一个强大的调试功能就是可以设置基于表达式（expressions）、命中次数（hit counts）或两者结合的条件。
+
+- 表达式条件：当表达式取值为 `true` 时，断点会被触发。
+- 命中次数：'命中次数' 控制在断点命中多少次后才 '中断' 执行。各种调试器扩展对 '命中次数' 的支持和表达式的具体语法是不同的。
+
+你可以在创建断点(使用 **Add Conditional Breakpoint** 动作)或修改已经存在的断点时（使用 **Edit Breakpoint** 动作）添加条件和/或命中次数。这两种场景下，一个包含下拉菜单的内联输入框会被打开，你可以在里面输入表达式：
+
+![HitCount](https://code.visualstudio.com/assets/docs/editor/debugging/hitCount.gif)
+
+如果调试器不支持条件断点，**Add Conditional Breakpoint** 动作不会出现。
+
+### 内联断点 / Inline breakpoints
+
+内联断点只会在执行到内联断点关联的列时才会被触发。这在调试一行中包含多个语句的压缩代码时特别有用。
+
+内联断点可以使用 `⇧F9` 设置，或在调试会话里通过鼠标右键菜单设置。内联断点在编辑器的行内显示。
+
+内联断点同样可以设置条件。通过在编辑区域左边界使用右键菜单可以编辑一行内的多个断点。
+
+### 函数断点 / Function breakpoints
+
+与直接在源代码里添加断点不同的是，调试器可以支持通过指定一个函数名来创建断点。这在只知道函数名但不能访问源码时很有用。
+
+函数断点通过在 **BREAKPOINTS** 区域的头部点击 + 按钮然后输入函数名创建。在 **BREAKPOINTS** 区域中，函数断点使用三角形展示。
+
+（译者注：经测试，Node.js 调试器并不支持函数断点）
 
 ## Debug Console REPL
 

@@ -9,10 +9,9 @@
       "request": "launch",
       "name": "Simple node.js app",
       "program": "${workspaceFolder}/debugging/simple-node-js/index.js",
-      "args": [ "${env:PATH}" ],
+      "args": [ "${env:USERNAME}" ],
       "env": {
-        "USERNAME": "123",
-        "PATH": null
+        "USERNAME": "123"
       },
       "stopOnEntry": true
     }

@@ -328,7 +328,13 @@ VS Code 的一个强大的调试功能就是可以设置基于表达式（expres
 
 （译者注：经测试，Node.js 调试器并不支持函数断点）
 
-## Debug Console REPL
+## 调试控制台 REPL / Debug Console REPL
+
+表达式可以通过 **调试控制台** 的 REPL（[Read-Eval-Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) ）功能求值。可以通过点击调试面板顶部的 **Debug Console** （译者注：在调试视图左边面板顶部有一个控制台图标，位于齿轮旁边）或使用 **View: Debug Console** 命令（`⇧⌘Y`）。当你按下 `回车键` 时表达式即被求值，并且调试控制台 REPL 会在你输入过程中给予提示。如果你需要输入多行，在每行间使用 `Shift+回车键` 并使用 `回车键` 对所有行进行求值。
+
+![Debug Console](https://code.visualstudio.com/assets/docs/editor/debugging/debugconsole.png)
+
+**注**：你必须在调试会话运行过程中使用控制台 REPL。
 
 ## Multi-target debugging
 

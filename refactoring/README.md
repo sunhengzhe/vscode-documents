@@ -26,7 +26,7 @@
 
 TypeScript 语言服务提供 **提取常量** 的重构，可以为当前选中的表达式创建一个新的局部变量：
 
-![Extract local](https://code.visualstudio.com/assets/docs/editor/refactoring/ts-extract-local.gif?)
+*（注：示例动图太大无法显示，点击 [ts-extract-local.gif](https://code.visualstudio.com/assets/docs/editor/refactoring/ts-extract-local.gif) 查看）*
 
 当在类里面重构时，你也可以将一个值提取为一个新的属性。
 

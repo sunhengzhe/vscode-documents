@@ -26,7 +26,7 @@
 
 TypeScript 语言服务提供 **提取常量** 的重构，可以为当前选中的表达式创建一个新的局部变量：
 
-![Extract local](https://code.visualstudio.com/assets/docs/editor/refactoring/ts-extract-local.gif)
+![Extract local](https://code.visualstudio.com/assets/docs/editor/refactoring/ts-extract-local.gif?)
 
 当在类里面重构时，你也可以将一个值提取为一个新的属性。
 
@@ -77,7 +77,7 @@ TypeScript 语言服务提供 **提取常量** 的重构，可以为当前选中
 
 当一个代码动作键绑定使用 `"preferred": true` 配置，只有首选快速修复和重构项会被展示。首选的快速修复指能解决潜在错误的，首选的重构项是指重构项中最常用的。例如，`refactor.extract.constant` 可能会有多个重构项，分别提取到文件的不同作用域内，`refactor.extract.constant` 的首选重构项是提取为局部变量。
 
-下面这个键绑定使用 `"preferred": true` 来创建一个重构项，它总是尝试把选中代码提取到局部作用域的常量中。
+下面这个键绑定使用 `"preferred": true` 来创建一个重构项，它总是尝试把选中代码提取到局部作用域的常量中：
 
 ```json
 {
